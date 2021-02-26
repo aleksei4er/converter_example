@@ -1,4 +1,15 @@
-# Example of parser and currency converter
+# 1. SQL
+
+```sql
+        SELECT u.*, GROUP_CONCAT(b.name) FROM users u 
+        LEFT JOIN user_book ub ON (u.id = ub.user_id)
+        LEFT JOIN books b ON (b.id = ub.book_id)
+        GROUP BY u.id
+        HAVING count(b.id) = 2 and COUNT(DISTINCT (b.author)) = 1
+```
+
+
+# 2. Example of parser and currency converter
 
 
 
