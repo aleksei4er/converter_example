@@ -42,10 +42,11 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'custom',
             'provider' => 'users',
             'hash' => false,
         ],
+
     ],
 
     /*
@@ -70,6 +71,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'custom' => [
+            'users' => [
+                'driver' => 'eloquent'
+            ]
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

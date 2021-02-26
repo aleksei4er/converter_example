@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'token_for_example' => env('TOKEN_FOR_EXAMPLE', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -226,7 +228,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
     ],
 
 ];

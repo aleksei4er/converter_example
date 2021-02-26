@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\Rate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

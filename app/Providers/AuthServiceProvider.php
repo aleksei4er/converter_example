@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -25,6 +28,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // custom guard for example
+        Auth::viaRequest('custom', function (Request $request) {
+            if ($request->bearerToken() == config('app.token_for_example')
+            || $request->input('token') == config('app.token_for_example')) {
+                return User::first();
+            }
+        });
     }
 }
